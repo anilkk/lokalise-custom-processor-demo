@@ -1,6 +1,8 @@
 export default async function handler(request, response) {
     const payload = request.body
 
+    console.log('PAYLOAD COLLECTION POSTPROCESS ->', JSON.stringify(payload.collection));
+
     // Iterate over the keys in the collection:
     for (const [keyId, keyValue] of Object.entries(payload.collection.keys)) {
       // Iterate over the translations in the key:

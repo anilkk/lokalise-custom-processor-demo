@@ -1,9 +1,9 @@
 export default async function handler(request, response) {
-    const webhookData = request.body;
     
     // Get the payload from the request:
     const payload = request.body
 
+    console.log('PAYLOAD COLLECTION PREPROCESS ->', JSON.stringify(payload.collection));
 
     // Iterate over the keys in the collection:
     for (const [keyId, keyValue] of Object.entries(payload.collection.keys)) {
