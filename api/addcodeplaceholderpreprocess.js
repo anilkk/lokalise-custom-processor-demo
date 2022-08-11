@@ -12,7 +12,7 @@ export default async function handler(request, response) {
         
         // Insert 'CODE_PLACEHOLDER_' to variables
         if (v.translation.match(/{/)) {
-          openBracketIndex = v.translation.match(/{/).index;
+          const openBracketIndex = v.translation.match(/{/).index;
           payload.collection.keys[keyId].translations[lang].translation = v.translation.slice(0, openBracketIndex + 1) + "CODE_PLACEHOLDER_" + v.translation.slice(openBracketIndex + 1);
         }
     }
