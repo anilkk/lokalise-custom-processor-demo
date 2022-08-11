@@ -10,11 +10,12 @@ export default async function handler(request, response) {
       // Iterate over the translations in the key:
       for (const [lang, v] of Object.entries(keyValue.translations)) {
         
-        // Process the value of the translation:
-        payload.collection.keys[keyId].translations[lang].translation = v.translation.replace(
-          '⚠️',
-          '',
-        )
+        // Insert 'CODE_PLACEHOLDER_' to variables
+        openBracketIndex = v.translation.match(/{/).index;
+        if (openBracketIndex !== -1) {
+          payload.collection.keys[keyId].translations[lang].translation = v.translation.slice(0, openBracketIndex + 1) + "CODE_PLACEHOLDER_" + v.translation.slice(openBracketIndex + 1);
+        }
+        
       }
     }
 
