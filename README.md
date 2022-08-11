@@ -3,8 +3,14 @@ This is a simple app to process warning(⚠️) emoji before and after translati
 
 
 ## Configuration
+
+### Handle warning(⚠️) emoji
 - **Import Custom processor URL**: `https://lokalise-custom-processor-demo.vercel.app/api/preprocess`
 - **Export Custom processor URL** `https://lokalise-custom-processor-demo.vercel.app/api/postprocess`
+
+### Manage add/remove 'CODE_PLACEHOLDER'
+- **Import Custom processor URL**: `https://lokalise-custom-processor-demo-git-main-anilkk.vercel.app/api/addcodeplaceholderpreprocess`
+- **Export Custom processor URL** `https://lokalise-custom-processor-demo-git-main-anilkk.vercel.app/api/removecodeplaceholderpostprocess`
 
 ![](./img/custom-processor.png)
 
